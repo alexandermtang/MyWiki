@@ -1,0 +1,12 @@
+  <head>
+    <title>ALEX'S WIKI</title>
+  </head>
+  <body>
+    <h1>ALEX'S WIKI</h1>
+    <% pages.each do |p| %>
+    <%   page = JSON.parse(p) %>
+    <a href="/view/<%= page["title"] %>"><%= page["title"]%></a><br>
+    <% end %><br>
+    <br>
+    <a href="/add_entry">Want to add a post?</a>
+  </body>

@@ -1,0 +1,23 @@
+<html>
+  <body>
+    <% if !p.nil? %>
+    <%   page = JSON.parse(p) %>
+    <%   title = page["title"] %>
+    <%   author = page["author"] %>
+    <%   body = page["body"] %>
+    <%   action = "edit" %>
+    <% else %>
+    <%   title = "Title" %>
+    <%   author = "Author" %>
+    <%   body = "Body" %>
+    <%   action = "add" %>
+    <% end %>
+
+    <form action="/<%= action %>_entry" method="POST">
+      <input type="text" name="title" value="<%= title %>"><br>
+      <input type="text" name="author" value="<%= author %>"><br>
+      <textarea name="body" cols="40" rows="20"><%= body %></textarea><br>
+      <input type="submit" value="<%= action.capitalize %> Entry">
+    </form>
+  </body>
+<html>

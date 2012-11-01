@@ -1,0 +1,12 @@
+<html>
+  <body>
+    <% page = JSON.parse(p) %>
+    <h2><%= page["title"]%></h2>
+    Written by <%= page["author"]%> on <%= page["date_added"] %><br>
+    Last modified by <%= page["last_modified_by"] %> on <%= page["date_modified"] %><br>
+    <br>
+    <%= page["body"] %><br>
+    <br>
+    <a href="/edit/<%= page["title"] %>">Edit this post?</a>
+  </body>
+</html>
